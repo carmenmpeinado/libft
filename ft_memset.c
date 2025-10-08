@@ -6,7 +6,7 @@
 /*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 21:04:55 by capeinad          #+#    #+#             */
-/*   Updated: 2025/10/03 13:11:56 by capeinad         ###   ########.fr       */
+/*   Updated: 2025/10/09 00:02:34 by capeinad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,15 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	i;
-	unsigned char	*ret;
+	size_t			i;
+	unsigned char	*temp;
 
 	i = 0;
+	temp = (unsigned char *)s;
 	while (i < n)
 	{
-		ret[i] = c;
-		*s = *ret;
+		temp[i] = (unsigned char)c;
+		i++;
 	}
-	return(void *(ret))
+	return ((void *) temp);
 }

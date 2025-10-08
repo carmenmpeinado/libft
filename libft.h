@@ -6,13 +6,19 @@
 /*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 11:55:45 by capeinad          #+#    #+#             */
-/*   Updated: 2025/10/03 11:57:50 by capeinad         ###   ########.fr       */
+/*   Updated: 2025/10/09 00:05:09 by capeinad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <unistd.h>
+# include <stdlib.h>
+# include <stddef.h>
+# include <limits.h>
+
+void	*ft_memset(void *s, int c, size_t n);
 int	ft_atoi(char *str);
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);

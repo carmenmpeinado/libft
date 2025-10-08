@@ -6,7 +6,7 @@
 /*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 21:05:21 by capeinad          #+#    #+#             */
-/*   Updated: 2025/10/03 12:21:51 by capeinad         ###   ########.fr       */
+/*   Updated: 2025/10/09 00:28:11 by capeinad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *big, const char *little, unsigned int len)
 {
-	int	j;
-	int	i;
+	unsigned int	j;
+	unsigned int	i;
 
 	j = 0;
 	i = 0;
