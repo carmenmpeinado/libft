@@ -6,12 +6,11 @@
 /*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 21:04:29 by capeinad          #+#    #+#             */
-/*   Updated: 2025/10/03 12:20:25 by capeinad         ###   ########.fr       */
+/*   Updated: 2025/10/09 01:42:56 by capeinad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 int	ft_isalnum(int c)
 {

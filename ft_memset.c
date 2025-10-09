@@ -6,12 +6,11 @@
 /*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 21:04:55 by capeinad          #+#    #+#             */
-/*   Updated: 2025/10/09 00:02:34 by capeinad         ###   ########.fr       */
+/*   Updated: 2025/10/09 01:33:10 by capeinad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 void	*ft_memset(void *s, int c, size_t n)
 {

@@ -6,12 +6,11 @@
 /*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 21:04:32 by capeinad          #+#    #+#             */
-/*   Updated: 2025/10/03 12:20:32 by capeinad         ###   ########.fr       */
+/*   Updated: 2025/10/09 01:42:52 by capeinad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 int	ft_isalpha(int c)
 {

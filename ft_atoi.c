@@ -6,39 +6,38 @@
 /*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 21:04:18 by capeinad          #+#    #+#             */
-/*   Updated: 2025/10/03 12:42:57 by capeinad         ###   ########.fr       */
+/*   Updated: 2025/10/09 07:34:11 by capeinad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-int	ft_atoi(char *str)
+int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	sign;
-	int	result;
+	int		i;
+	int		sign;
+	long	result;
 
 	i = 0;
 	sign = 1;
 	result = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
 		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		if (str[i] == '-')
+		if (nptr[i] == '-')
 			sign = sign * -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		result = (result * 10) + (str[i] - '0');
+		result = (result * 10) + (nptr[i] - '0');
 		i++;
 	}
 	result = result * sign;
-	return (result);
+	return ((int)result);
 }
-#include <stdio.h>
+/* #include <stdio.h>
 #include <stdlib.h>
 
 int	main (void)
@@ -49,4 +48,4 @@ int	main (void)
 	printf("%d", ft_atoi(str));
 	// printf("%d", atoi(str));
 	return(0);
-}
+} */

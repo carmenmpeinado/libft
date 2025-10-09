@@ -6,8 +6,15 @@
 /*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 21:05:26 by capeinad          #+#    #+#             */
-/*   Updated: 2025/10/03 12:22:01 by capeinad         ###   ########.fr       */
+/*   Updated: 2025/10/09 05:28:55 by capeinad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	ft_tolower(int c)
+{
+	if (c >= 65 && c <= 90)
+		c = c + 32;
+	return (c);
+}

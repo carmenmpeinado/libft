@@ -6,15 +6,15 @@
 /*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 21:05:15 by capeinad          #+#    #+#             */
-/*   Updated: 2025/10/03 12:21:40 by capeinad         ###   ########.fr       */
+/*   Updated: 2025/10/09 02:07:18 by capeinad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	n;
+	size_t	n;
 
 	n = 0;
 	while (str[n] != '\0')
