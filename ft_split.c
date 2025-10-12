@@ -2,13 +2,14 @@
 #include <stdlib.h>
 #include "libft.h"
 
-static char **mng_mem(size_t count, char **array, size_t filled, _Bool lib)
+static char	**mng_mem(size_t count, char **array, size_t filled, _Bool lib)
 {
 	if (lib == 0)
 	{
 		array = malloc((count + 1) * sizeof(char *));
 		if (!array)
 			return(0);
+		array[count] = 0;
 		return(array);
 	}
 	else if (lib == 1 && array)
@@ -48,7 +49,7 @@ static size_t	count_sep(const char *s, char c)
 	return(count);
 }
 
-static char *allocate_word(const char *s, size_t start, size_t end)
+static char	*allocate_word(const char *s, size_t start, size_t end)
 {
 	size_t	len_word;
 	char	*word;
@@ -74,7 +75,7 @@ static int	next_word(const char *s, char sep, int *start, int *end, int *i)
 	return(1);
 }
 
-char **ft_split(const char *s, char sep)
+char	**ft_split(const char *s, char sep)
 {
 	int	i;
 	int	start;
