@@ -9,7 +9,6 @@ static char **mng_mem(size_t count, char **array, size_t filled, _Bool lib)
 		array = malloc((count + 1) * sizeof(char *));
 		if (!array)
 			return(0);
-		array[count] = 0;
 		return(array);
 	}
 	else if (lib == 1 && array)
