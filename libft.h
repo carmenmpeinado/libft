@@ -47,6 +47,6 @@ void			*ft_calloc(size_t count, size_t size);
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 char			**ft_split(const char *s, char sep);
-
+char			*ft_itoa(int n);
 
 #endif
