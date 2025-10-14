@@ -8,7 +8,10 @@ static char	**mng_mem(size_t count, char **array, size_t filled, _Bool lib)
 	{
 		array = malloc((count + 1) * sizeof(char *));
 		if (!array)
+		{
+			free(array);
 			return(0);
+		}
 		array[count] = 0;
 		return(array);
 	}
@@ -57,7 +60,10 @@ static char	*allocate_word(const char *s, size_t start, size_t end)
 	len_word = end - start + 1;
 	word = malloc(len_word + 1);
 	if (!word)
+	{
+		free (word);
 		return(0);
+	}
 	ft_strlcpy(word, s + start, len_word + 1);
 	return(word);
 }

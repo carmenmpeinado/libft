@@ -24,7 +24,10 @@ void	*ft_calloc(size_t mmry, size_t size)
 	{
 		ptr = malloc(mmry * size);
 		if (!ptr)
+		{
+			free(ptr);
 			return (0);
+		}
 		ft_bzero(ptr, mmry * size);
 		return (ptr);
 	}

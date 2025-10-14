@@ -20,7 +20,10 @@ char	*ft_strdup(const char *s)
 	newstr = (void *)malloc(ft_strlen(s) + 1);
 	i = 0;
 	if (!newstr)
+	{
+		free(newstr);
 		return (0);
+	}
 	while (s[i] != '\0')
 	{
 		newstr[i] = s[i];

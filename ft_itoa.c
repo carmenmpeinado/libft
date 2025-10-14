@@ -23,7 +23,10 @@ static char	*allocate_digit(long long number, _Bool sign)
 	if (sign == 0)
 		array = malloc(numlen(number) + 1);
 	if(!array)
+	{
+		free(array);
 		return(0);
+	}
 	return(array);
 }
 
