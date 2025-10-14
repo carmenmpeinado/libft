@@ -10,7 +10,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		new = malloc(1);
 		if (!new)
+		{
+			free(new);
 			return (0);
+		}
 		new[0] = '\0';
 		return (new);
 	}
@@ -18,7 +21,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = ft_strlen(s + start);
 	new = malloc(len + 1);
 	if (!new)
+	{
+		free(new);
 		return (0);
+	}
 	ft_strlcpy(new, s + start, len + 1);
 	return (new);
 }
