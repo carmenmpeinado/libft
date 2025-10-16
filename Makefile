@@ -21,23 +21,28 @@ SRCS = ft_atoi.c ft_isalnum.c ft_isdigit.c ft_isascii.c ft_memset.c ft_strncmp.c
 	ft_split.c ft_itoa.c ft_substr.c ft_putstr_fd.c ft_putnbr_fd.c \
 	ft_putchar_fd.c ft_putendl_fd.c ft_strjoin.c ft_strtrim.c ft_strmapi.c \
 	ft_striteri.c
-OBJ_FILES = $(SRCS:.c=.o)
+BONUS_SRCS = 
 
+OBJ_FILES = $(SRCS:.c=.o)
+B_OBJ_FILES =$(BONUS_SRCS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ_FILES)
 	ar rcs $(NAME) $(OBJ_FILES)
 
+bonus: $(B_OBJ_FILES)
+	ar rcs $(NAME) $(B_OBJ_FILES)
+
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ_FILES)
+	rm -f $(OBJ_FILES) $(B_OBJ_FILES)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
