@@ -1,59 +1,63 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/18 13:35:17 by capeinad          #+#    #+#             */
+/*   Updated: 2025/10/18 16:53:20 by capeinad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static unsigned long	numlen(long long number)
+static int	digitcount(int n)
 {
-	int	ten;
-	unsigned long	digit;
+	int	digit;
 
-	ten = 10;
-	digit = 1;
-	while(number >= ten)
+	digit = 0;
+	if (n == 0)
+		return (1);
+	if (n != 0)
 	{
-		number = number / 10;
-		digit++;
+		if (n < 0)
+		{
+			digit++;
+			n = -n;
+		}
+		while (n != 0)
+		{
+			n = n / 10;
+			digit++;
+		}
 	}
-	return(digit);
-}
-static char	*allocate_digit(long long number, _Bool sign)
-{
-	char	*array;
-
-	if(sign == 1)
-		array = malloc(numlen(number) + 2);
-	if (sign == 0)
-		array = malloc(numlen(number) + 1);
-	if(!array)
-	{
-		free(array);
-		return(0);
-	}
-	return(array);
+	return (digit);
 }
 
 char	*ft_itoa(int n)
 {
-	long long	number;
-	_Bool	sign;
+	size_t	len;
 	char	*array;
-	int	i;
+	long	nbr;
 
-	sign = 0;
-	number = n;
-	if(n < 0)
+	nbr = n;
+	len = digitcount(n);
+	array = malloc(len + 1);
+	if (!array)
+		return (0);
+	array[len--] = '\0';
+	if (nbr == 0)
+		array[0] = '0';
+	if (nbr < 0)
 	{
-		number *= -1;
-		sign = 1;
-	}
-	array = allocate_digit(number, sign);
-	i = numlen(number) + sign - 1;
-	array[i + 1] = '\0';
-	while (i >= sign)
-	{
-		array[i] = '0' + (number % 10);
-		number = number / 10;
-		i--;
-	}
-	if (sign)
 		array[0] = '-';
-	return(array);
+		nbr = -nbr;
+	}
+	while (nbr > 0)
+	{
+		array[len--] = (nbr % 10) + '0';
+		nbr /= 10;
+	}
+	return (array);
 }

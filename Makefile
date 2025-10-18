@@ -6,14 +6,13 @@
 #    By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/03 00:40:52 by capeinad          #+#    #+#              #
-#    Updated: 2025/10/09 17:13:57 by capeinad         ###   ########.fr        #
+#    Updated: 2025/10/18 17:31:07 by capeinad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
-NAME_BONUS = libft_bonus.a
 
 SRCS = ft_atoi.c ft_isalnum.c ft_isdigit.c ft_isascii.c ft_memset.c ft_strncmp.c \
 	ft_isalpha.c ft_isprint.c ft_strlcpy.c ft_strnstr.c ft_strlen.c ft_bzero.c \
@@ -25,7 +24,7 @@ SRCS = ft_atoi.c ft_isalnum.c ft_isdigit.c ft_isascii.c ft_memset.c ft_strncmp.c
 
 BONUS_SRCS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 		ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
-		ft_lstclear_bonus.c ft_lstiter_bonus.c
+		ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
 OBJ_FILES = $(SRCS:.c=.o)
 B_OBJ_FILES =$(BONUS_SRCS:.c=.o)
@@ -39,13 +38,13 @@ $(NAME): $(OBJ_FILES)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 bonus: $(OBJ_FILES) $(B_OBJ_FILES)
-	ar rcs $(NAME_BONUS) $(B_OBJ_FILES)
+	ar rcs $(NAME) $(B_OBJ_FILES)
 
 clean:
 	rm -f $(OBJ_FILES) $(B_OBJ_FILES)
 
 fclean: clean
-	rm -f $(NAME) $(NAME_BONUS)
+	rm -f $(NAME)
 
 re: fclean all
 

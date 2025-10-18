@@ -6,7 +6,7 @@
 /*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 21:05:15 by capeinad          #+#    #+#             */
-/*   Updated: 2025/10/09 02:07:18 by capeinad         ###   ########.fr       */
+/*   Updated: 2025/10/18 13:57:44 by capeinad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,3 @@ size_t	ft_strlen(const char *str)
 		n++;
 	return (n);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	int	n;
-	char	str[100] = "I have X chars";
-	
-	n = ft_strlen(str);
-	printf("%d", n);
-	return (0);
-}
-*/

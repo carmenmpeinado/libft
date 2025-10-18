@@ -6,7 +6,7 @@
 /*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 21:05:18 by capeinad          #+#    #+#             */
-/*   Updated: 2025/10/09 05:51:17 by capeinad         ###   ########.fr       */
+/*   Updated: 2025/10/18 13:58:13 by capeinad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-
-int	main(void)
-{
-	char	fir[] = "";
-	char	sec[] = "abcdefghijlm";
-	unsigned int n = 10;
-	printf("%d\n", ft_strncmp(fir, sec, n));
-	printf("%d", strncmp(fir, sec, n));
-	return (0);
-}
-	*/

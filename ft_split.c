@@ -1,110 +1,90 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/18 13:44:03 by capeinad          #+#    #+#             */
+/*   Updated: 2025/10/18 17:00:12 by capeinad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
 #include <stdlib.h>
 #include "libft.h"
 
-static char	**mng_mem(size_t count, char **array, size_t filled, _Bool lib)
+static size_t	countwords(const char *s, char c)
 {
-	if (lib == 0)
-	{
-		array = malloc((count + 1) * sizeof(char *));
-		if (!array)
-		{
-			free(array);
-			return(0);
-		}
-		array[count] = 0;
-		return(array);
-	}
-	else if (lib == 1 && array)
-	{
-		while (filled > 0)
-		{
-			filled--;
-			free(array[filled]);
-		}
-		free(array);
-	}
-	return(0);
-}
-
-static size_t	count_sep(const char *s, char c)
-{
-	size_t	i;
 	size_t	count;
-	_Bool	in_word;
+	size_t	i;
 
-	i = 0;
 	count = 0;
-	in_word = 0;
-	if (!s || !*s)
-		return(0);
+	i = 0;
 	while (s[i])
 	{
-		if (s[i] != c && !in_word)
-		{
-			in_word = 1;
+		while (s[i] == c)
+			i++;
+		if (s[i])
 			count++;
-		}
-		else if (s[i] == c)
-			in_word = 0;
-		i++;
+		while (s[i] && s[i] != c)
+			i++;
 	}
-	return(count);
+	return (count);
 }
 
-static char	*allocate_word(const char *s, size_t start, size_t end)
+static char	*words(const char *s, char c, size_t *i)
 {
-	size_t	len_word;
-	char	*word;
+	size_t	start;
+	size_t	end;
 
-	len_word = end - start + 1;
-	word = malloc(len_word + 1);
-	if (!word)
-	{
-		free (word);
-		return(0);
-	}
-	ft_strlcpy(word, s + start, len_word + 1);
-	return(word);
-}
-
-static int	next_word(const char *s, char sep, int *start, int *end, int *i)
-{
-	while (s[*i] && s[*i] == sep)
+	while (s[*i] == c)
 		(*i)++;
-	if (!s[*i])
-		return(0);
-	*start = *i;
-	while (s[*i] && s[*i] != sep)
+	start = *i;
+	while (s[*i] && s[*i] != c)
 		(*i)++;
-	*end = *i - 1;
-	return(1);
+	end = *i;
+	return (ft_substr(s, start, end - start));
 }
 
-char	**ft_split(const char *s, char sep)
+static void	free_split(char **result, size_t j)
 {
-	int	i;
-	int	start;
-	int	end;
-	size_t	word;
+	while (j > 0)
+		free(result[--j]);
+	free(result);
+}
+
+static char	**fill_split(const char *s, char c, size_t word_count)
+{
 	char	**array;
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	array = (char **)malloc((word_count + 1) * sizeof(char *));
+	if (!array)
+		return (NULL);
+	while (j < word_count)
+	{
+		array[j] = words(s, c, &i);
+		if (!array[j])
+		{
+			free_split(array, j);
+			return (NULL);
+		}
+		j++;
+	}
+	array[j] = NULL;
+	return (array);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t	word_count;
 
 	if (!s)
-		return(0);
-	i = 0;
-	start = 0;
-	end = 0;
-	word = 0;
-	array = mng_mem(count_sep(s, sep), 0, 0, 0);
-	if (!array)
-		return(0);
-	while (next_word(s, sep, &start, &end, &i))
-	{
-		array[word] = allocate_word(s, start, end);
-		if (!array[word])
-			return(mng_mem(0, array, word, 1));
-		word++;
-	}
-	array[word] = 0;
-	return(array);
+		return (NULL);
+	word_count = countwords(s, c);
+	return (fill_split(s, c, word_count));
 }

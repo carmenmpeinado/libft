@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/18 13:58:53 by capeinad          #+#    #+#             */
+/*   Updated: 2025/10/18 13:58:55 by capeinad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -28,13 +40,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ft_strlcpy(new, s + start, len + 1);
 	return (new);
 }
-
-// #include <stdio.h>
-
-// int main (void)
-// {
-// 	char *s1 ="For all the ghosts that are never gonna catch me";
-// 	char *s2 = ft_substr(s1, 4, 18);
-
-// 	printf("%s", s2);
-// }

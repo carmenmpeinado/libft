@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/18 13:58:43 by capeinad          #+#    #+#             */
+/*   Updated: 2025/10/18 13:58:44 by capeinad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -15,12 +27,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end--;
 	return (ft_substr(s1, start, end - start));
 }
-// #include <stdio.h>
-	
-// int main(void)
-// {
-// 	const char *s1 = "LOLintentoLOL";
-// 	const char *s2 = "LOL";
-// 	printf("%s", ft_strtrim(s1, s2));
-
-// }

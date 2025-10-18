@@ -6,7 +6,7 @@
 /*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 21:04:18 by capeinad          #+#    #+#             */
-/*   Updated: 2025/10/09 07:34:11 by capeinad         ###   ########.fr       */
+/*   Updated: 2025/10/18 16:25:25 by capeinad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,3 @@ int	ft_atoi(const char *nptr)
 	result = result * sign;
 	return ((int)result);
 }
-/* #include <stdio.h>
-#include <stdlib.h>
-
-int	main (void)
-{
-	char	*str;
-
-	str = " +9";
-	printf("%d", ft_atoi(str));
-	// printf("%d", atoi(str));
-	return(0);
-} */
