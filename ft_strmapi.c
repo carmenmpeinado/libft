@@ -6,7 +6,7 @@
 /*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 13:58:04 by capeinad          #+#    #+#             */
-/*   Updated: 2025/10/18 13:58:05 by capeinad         ###   ########.fr       */
+/*   Updated: 2025/10/19 10:50:32 by capeinad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (0);
 	new = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!new)
-	{
-		free(new);
 		return (0);
-	}
 	while (s[i])
 	{
 		new[i] = f(i, s[i]);

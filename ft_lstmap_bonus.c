@@ -6,7 +6,7 @@
 /*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 17:17:56 by capeinad          #+#    #+#             */
-/*   Updated: 2025/10/18 18:17:20 by capeinad         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:18:51 by capeinad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void(*del)(void *))
 		if (!node)
 		{
 			ft_lstclear(&new, del);
-			free(node);
 			return (NULL);
 		}
 		ft_lstadd_back(&new, node);

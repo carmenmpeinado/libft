@@ -6,7 +6,7 @@
 /*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 13:38:47 by capeinad          #+#    #+#             */
-/*   Updated: 2025/10/18 14:11:40 by capeinad         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:18:17 by capeinad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ t_list	*ft_lstnew(void *content)
 
 	newlst = (t_list *)malloc(sizeof (t_list));
 	if (!newlst)
-	{
-		free (newlst);
-		return (0);
-	}
+		return (NULL);
 	newlst->content = content;
 	newlst->next = NULL;
 	return (newlst);

@@ -6,7 +6,7 @@
 /*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 13:58:53 by capeinad          #+#    #+#             */
-/*   Updated: 2025/10/18 13:58:55 by capeinad         ###   ########.fr       */
+/*   Updated: 2025/10/19 10:51:05 by capeinad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		new = malloc(1);
 		if (!new)
-		{
-			free(new);
 			return (0);
-		}
 		new[0] = '\0';
 		return (new);
 	}
@@ -33,10 +30,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = ft_strlen(s + start);
 	new = malloc(len + 1);
 	if (!new)
-	{
-		free(new);
 		return (0);
-	}
 	ft_strlcpy(new, s + start, len + 1);
 	return (new);
 }

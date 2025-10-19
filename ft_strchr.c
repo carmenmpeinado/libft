@@ -6,7 +6,7 @@
 /*   By: capeinad <capeinad@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 21:04:58 by capeinad          #+#    #+#             */
-/*   Updated: 2025/10/09 15:15:30 by capeinad         ###   ########.fr       */
+/*   Updated: 2025/10/19 18:15:33 by capeinad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if (s[i] == (char)c)
 		return ((char *)&s[i]);
-	return (0);
+	return (NULL);
 }
